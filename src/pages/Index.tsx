@@ -3,6 +3,9 @@ import Hero from "@/components/Hero";
 import BranchCard from "@/components/BranchCard";
 import { Card, CardContent } from "@/components/ui/card";
 import { Star, Book, Users, Trophy, Building2, Laptop } from "lucide-react";
+import Marquee from "@/components/Marquee";
+import Notifications from "@/components/Notifications";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   const branches = [
@@ -104,8 +107,10 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
+      <Marquee />
       <main>
         <Hero />
+        <Notifications />
         
         <section id="branches" className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white">
           <div className="container mx-auto px-4">
@@ -197,6 +202,7 @@ const Index = () => {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 };
