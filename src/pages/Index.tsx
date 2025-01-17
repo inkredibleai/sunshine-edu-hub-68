@@ -110,8 +110,39 @@ const Index = () => {
       <Marquee />
       <main>
         <Hero />
-        <Notifications />
         
+        {/* Two Column Section */}
+        <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* About Column */}
+              <div className="space-y-6">
+                <h2 className="font-heading text-3xl font-bold text-primary">About Sunrise Edu Hub</h2>
+                <div className="prose prose-lg">
+                  <p className="text-gray-600">
+                    Sunrise Edu Hub is a leading educational institution committed to transforming rural societies through quality education. With a legacy of excellence, we provide comprehensive education from school to college level, including specialized courses in pharmacy, military preparation, and competitive exam coaching.
+                  </p>
+                  <p className="text-gray-600 mt-4">
+                    Our mission is to empower students with knowledge, skills, and values that enable them to excel in their chosen fields and contribute meaningfully to society. Through innovative teaching methods, experienced faculty, and state-of-the-art facilities, we create an environment that nurtures learning and growth.
+                  </p>
+                  <ul className="mt-4 space-y-2 text-gray-600">
+                    <li>✓ Comprehensive educational programs</li>
+                    <li>✓ Experienced and dedicated faculty</li>
+                    <li>✓ Modern infrastructure and facilities</li>
+                    <li>✓ Focus on holistic development</li>
+                    <li>✓ Strong track record of student success</li>
+                  </ul>
+                </div>
+              </div>
+              
+              {/* Latest Updates Column */}
+              <div>
+                <Notifications />
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section id="branches" className="py-16 md:py-24 bg-gradient-to-b from-blue-50 to-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-12">
