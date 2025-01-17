@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b">
+    <header className="fixed top-[40px] left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b">
       <div className="container mx-auto px-4 py-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <img src="/placeholder.svg" alt="Sunrise Edu Hub Logo" className="h-10 w-auto" />
