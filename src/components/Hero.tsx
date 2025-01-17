@@ -6,6 +6,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
@@ -28,21 +29,35 @@ const heroSlides = [
 ];
 
 const Hero = () => {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
 
   useEffect(() => {
-    if (!api) return;
+    if (!api) {
+      console.log("Hero carousel API not initialized");
+      return;
+    }
 
+    console.log("Setting up hero carousel interval");
     const interval = setInterval(() => {
-      api.next();
+      api.scrollNext();
     }, 5000);
 
-    return () => clearInterval(interval);
+    return () => {
+      console.log("Cleaning up hero carousel interval");
+      clearInterval(interval);
+    };
   }, [api]);
 
   return (
     <section className="relative">
-      <Carousel setApi={setApi} className="w-full">
+      <Carousel 
+        setApi={setApi} 
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        className="w-full"
+      >
         <CarouselContent>
           {heroSlides.map((slide, index) => (
             <CarouselItem key={index}>

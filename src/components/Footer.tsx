@@ -1,6 +1,7 @@
 import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Twitter } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 import { useEffect, useState } from "react";
+import type { CarouselApi } from "./ui/carousel";
 
 const footerImages = [
   "photo-1506744038136-46273834b3fb",
@@ -9,22 +10,36 @@ const footerImages = [
 ];
 
 const Footer = () => {
-  const [api, setApi] = useState<any>();
+  const [api, setApi] = useState<CarouselApi>();
 
   useEffect(() => {
-    if (!api) return;
+    if (!api) {
+      console.log("Carousel API not initialized");
+      return;
+    }
 
+    console.log("Setting up carousel interval");
     const interval = setInterval(() => {
-      api.next();
+      api.scrollNext();
     }, 4000);
 
-    return () => clearInterval(interval);
+    return () => {
+      console.log("Cleaning up carousel interval");
+      clearInterval(interval);
+    };
   }, [api]);
 
   return (
     <footer className="bg-primary text-white">
       <div className="h-40 overflow-hidden">
-        <Carousel setApi={setApi} className="w-full">
+        <Carousel 
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          setApi={setApi} 
+          className="w-full"
+        >
           <CarouselContent>
             {footerImages.map((image, index) => (
               <CarouselItem key={index}>
