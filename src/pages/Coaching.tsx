@@ -9,19 +9,93 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { GraduationCap, Users, Trophy, Award, Star, BookOpen } from "lucide-react";
+import { GraduationCap, Users, Trophy, Award, Star, BookOpen, Laptop } from "lucide-react";
 
 const Coaching = () => {
+  const programs = [
+    {
+      title: "Pre-Foundation",
+      description: "For Class 6th to 10th",
+      color: "bg-purple-100",
+      textColor: "text-purple-600"
+    },
+    {
+      title: "IIT-JEE Foundation",
+      subtitle: "(Main + Advanced)",
+      description: "For Class 11th & 12th (Maths)",
+      color: "bg-blue-100",
+      textColor: "text-blue-600"
+    },
+    {
+      title: "NEET (UG) Foundation",
+      description: "For Class 11th & 12th (Biology)",
+      color: "bg-teal-100",
+      textColor: "text-teal-600"
+    },
+    {
+      title: "IIT-JEE Target",
+      subtitle: "(Main + Advanced)",
+      description: "For Class 12th (Maths) Passed",
+      color: "bg-purple-100",
+      textColor: "text-purple-600"
+    },
+    {
+      title: "NEET (UG) Target",
+      description: "For Class 12th (Biology) Passed",
+      color: "bg-blue-100",
+      textColor: "text-blue-600"
+    },
+    {
+      title: "Sunrise Foundation Scholarship Test",
+      description: "GSAT",
+      color: "bg-teal-100",
+      textColor: "text-teal-600"
+    }
+  ];
+
+  const facilities = [
+    { 
+      title: "Classrooms",
+      description: "Spacious and well-equipped classrooms with modern teaching aids to facilitate effective learning.",
+      color: "bg-purple-100",
+      textColor: "text-purple-600"
+    },
+    {
+      title: "Study Areas",
+      description: "Quiet study areas and discussion rooms for group study sessions and collaborative learning.",
+      color: "bg-blue-100",
+      textColor: "text-blue-600"
+    },
+    {
+      title: "Computer Center",
+      description: "High-speed internet access and computing facilities for research, assignments, and project work.",
+      color: "bg-teal-100",
+      textColor: "text-teal-600"
+    },
+    {
+      title: "Hostel",
+      description: "Comfortable and secure hostel accommodation with facilities for dining, recreation, and study.",
+      color: "bg-purple-100",
+      textColor: "text-purple-600"
+    },
+    {
+      title: "Security",
+      description: "24/7 security surveillance and personnel to ensure the safety and security of students and staff on campus.",
+      color: "bg-blue-100",
+      textColor: "text-blue-600"
+    },
+    {
+      title: "Health Center",
+      description: "Professional medical facilities and counseling services for physical and mental well-being.",
+      color: "bg-teal-100",
+      textColor: "text-teal-600"
+    }
+  ];
+
   const topRankers = [
     { name: "Student Name 1", rank: "AIR 145", year: "2023" },
     { name: "Student Name 2", rank: "AIR 234", year: "2023" },
     { name: "Student Name 3", rank: "AIR 89", year: "2023" },
-  ];
-
-  const facilities = [
-    { icon: <BookOpen className="w-8 h-8" />, title: "Expert Faculty", description: "Experienced teachers dedicated to student success" },
-    { icon: <Users className="w-8 h-8" />, title: "Small Batch Size", description: "Personalized attention for better learning" },
-    { icon: <Star className="w-8 h-8" />, title: "Regular Tests", description: "Comprehensive assessment system" },
   ];
 
   const faqs = [
@@ -37,17 +111,19 @@ const Coaching = () => {
       heroTitle="Welcome to Sunrise Foundation Classes"
       heroDescription="Leading coaching institute for IIT-JEE and NEET preparation"
     >
-      {/* Top Rankers Section */}
+      {/* Programs Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-8 text-center">Our Top Achievers</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {topRankers.map((ranker, index) => (
-            <Card key={index}>
-              <CardContent className="p-6 text-center">
-                <img src="/placeholder.svg" alt={ranker.name} className="w-24 h-24 rounded-full mx-auto mb-4" />
-                <h3 className="font-semibold">{ranker.name}</h3>
-                <p className="text-primary">{ranker.rank}</p>
-                <p className="text-sm text-gray-600">{ranker.year}</p>
+        <h2 className="text-3xl font-bold text-center mb-4">Explore Our Range of Programs</h2>
+        <p className="text-center text-gray-600 mb-8">
+          At Sunrise Foundation Classes, we are committed to providing high-quality education and comprehensive preparation for competitive exams.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {programs.map((program, index) => (
+            <Card key={index} className={`${program.color} border-none`}>
+              <CardContent className="p-6">
+                <h3 className={`text-xl font-semibold ${program.textColor} mb-2`}>{program.title}</h3>
+                {program.subtitle && <p className="text-gray-600 mb-2">{program.subtitle}</p>}
+                <p className="text-gray-600">{program.description}</p>
               </CardContent>
             </Card>
           ))}
@@ -56,13 +132,15 @@ const Coaching = () => {
 
       {/* Facilities Section */}
       <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-8 text-center">Our Facilities</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <h2 className="text-3xl font-bold text-center mb-4">Our Facilities</h2>
+        <p className="text-center text-gray-600 mb-8">
+          We are committed to providing our students with modern amenities and state-of-the-art facilities to support their academic journey.
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {facilities.map((facility, index) => (
-            <Card key={index}>
-              <CardContent className="p-6 text-center">
-                <div className="mb-4 flex justify-center text-primary">{facility.icon}</div>
-                <h3 className="font-semibold mb-2">{facility.title}</h3>
+            <Card key={index} className={`${facility.color} border-none`}>
+              <CardContent className="p-6">
+                <h3 className={`text-xl font-semibold ${facility.textColor} mb-2`}>{facility.title}</h3>
                 <p className="text-gray-600">{facility.description}</p>
               </CardContent>
             </Card>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Card } from "./ui/card";
-import { Bell } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -18,21 +17,21 @@ interface Notice {
 const notices: Notice[] = [
   {
     id: 1,
-    title: "Admissions Open for 2024-25",
-    content: "Applications are now being accepted for the academic year 2024-25. Early bird discounts available until March 31st.",
-    date: "2024-02-15"
+    title: "Campus Expansion Project",
+    content: "New state-of-the-art facilities being added to accommodate growing student body.",
+    date: "2024-02-20"
   },
   {
     id: 2,
-    title: "New IIT-JEE Batch Starting",
-    content: "New batch for IIT-JEE preparation starting from April 1st. Limited seats available.",
-    date: "2024-02-14"
+    title: "Academic Excellence Awards",
+    content: "Annual Academic Excellence Awards ceremony to be held next month.",
+    date: "2024-02-18"
   },
   {
     id: 3,
-    title: "Annual Sports Meet",
-    content: "Annual Sports Meet will be held from March 10th to March 15th. All students are encouraged to participate.",
-    date: "2024-02-13"
+    title: "Parent-Teacher Meeting",
+    content: "Quarterly parent-teacher meeting scheduled for next week.",
+    date: "2024-02-16"
   }
 ];
 

@@ -96,6 +96,30 @@ const Index = () => {
     }
   ];
 
+  const facilities = [
+    { 
+      title: "Classrooms",
+      description: "Spacious and well-equipped classrooms with modern teaching aids to facilitate effective learning.",
+      color: "bg-purple-100",
+      textColor: "text-purple-600",
+      icon: <Book className="w-8 h-8" />
+    },
+    {
+      title: "Study Areas",
+      description: "Quiet study areas and discussion rooms for group study sessions and collaborative learning.",
+      color: "bg-blue-100",
+      textColor: "text-blue-600",
+      icon: <Users className="w-8 h-8" />
+    },
+    {
+      title: "Computer Center",
+      description: "High-speed internet access and computing facilities for research, assignments, and project work.",
+      color: "bg-teal-100",
+      textColor: "text-teal-600",
+      icon: <Laptop className="w-8 h-8" />
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -129,6 +153,31 @@ const Index = () => {
                 <Notifications />
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Facilities Section */}
+      <section className="py-16 bg-gradient-to-b from-purple-50 to-white">
+        <div className="container mx-auto px-4">
+          <h2 className="font-heading text-3xl font-bold text-center mb-4">Our Facilities</h2>
+          <p className="text-center text-gray-600 mb-8">
+            Experience state-of-the-art facilities designed to enhance your learning journey
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {facilities.map((facility, index) => (
+              <Card key={index} className={`${facility.color} border-none`}>
+                <CardContent className="p-6">
+                  <div className={`flex justify-center mb-4 ${facility.textColor}`}>
+                    {facility.icon}
+                  </div>
+                  <h3 className={`text-xl font-semibold text-center ${facility.textColor} mb-2`}>
+                    {facility.title}
+                  </h3>
+                  <p className="text-center text-gray-600">{facility.description}</p>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
