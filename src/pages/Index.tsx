@@ -2,13 +2,15 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BranchCard from "@/components/BranchCard";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Book, Users, Trophy, Building2, Laptop, GraduationCap, Award } from "lucide-react";
+import { Users, GraduationCap, Trophy, Award } from "lucide-react";
 import Marquee from "@/components/Marquee";
 import Notifications from "@/components/Notifications";
 import Footer from "@/components/Footer";
 import CBSEResults from "@/components/CBSEResults";
 import WhyChooseSunrise from "@/components/WhyChooseSunrise";
 import BestSchoolingExperience from "@/components/BestSchoolingExperience";
+import TopSelections from "@/components/TopSelections";
+import LatestNews from "@/components/LatestNews";
 
 const Index = () => {
   const branches = [
@@ -55,48 +57,6 @@ const Index = () => {
     { number: "500+", label: "Faculty Members", icon: <GraduationCap className="w-8 h-8 text-green-600" /> },
     { number: "95%", label: "Success Rate", icon: <Trophy className="w-8 h-8 text-yellow-600" /> },
     { number: "50+", label: "Awards", icon: <Award className="w-8 h-8 text-purple-600" /> },
-  ];
-
-  const topSelections = [
-    {
-      title: "IIT JEE 2023",
-      student: "Rahul Sharma",
-      rank: "AIR 145",
-      image: "/placeholder.svg"
-    },
-    {
-      title: "NEET 2023",
-      student: "Priya Patel",
-      rank: "AIR 234",
-      image: "/placeholder.svg"
-    },
-    {
-      title: "UPSC 2023",
-      student: "Amit Kumar",
-      rank: "AIR 89",
-      image: "/placeholder.svg"
-    }
-  ];
-
-  const newsArticles = [
-    {
-      title: "New Campus Inauguration",
-      date: "Feb 15, 2024",
-      excerpt: "State-of-the-art facility opened to accommodate growing student body",
-      image: "/placeholder.svg"
-    },
-    {
-      title: "National Science Exhibition",
-      date: "Feb 10, 2024",
-      excerpt: "Our students won first prize in the National Science Exhibition",
-      image: "/placeholder.svg"
-    },
-    {
-      title: "Industry Partnership",
-      date: "Feb 5, 2024",
-      excerpt: "New collaboration with leading tech companies for student placements",
-      image: "/placeholder.svg"
-    }
   ];
 
   const facilities = [
@@ -160,7 +120,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* New Sections */}
+      <TopSelections />
+      <LatestNews />
       <CBSEResults />
       <WhyChooseSunrise />
       <BestSchoolingExperience />

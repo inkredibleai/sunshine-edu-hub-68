@@ -11,19 +11,19 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#1e2a4a] text-white z-50 border-b border-gray-700">
+    <header className="fixed top-0 left-0 right-0 bg-[#1e2a4a] z-50 border-b border-gray-700">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
             <img src="/placeholder.svg" alt="Sunrise Edu Group Logo" className="h-12 w-auto" />
             <div className="flex flex-col">
-              <span className="font-heading font-semibold text-xl text-white hidden sm:inline">Sunrise Edu Group</span>
-              <span className="text-sm text-gray-300 hidden sm:inline">Schools | Coachings | Colleges</span>
+              <span className="font-heading font-semibold text-xl text-white">Sunrise Edu Group</span>
+              <span className="text-sm text-gray-300">Schools | Coachings | Colleges</span>
             </div>
           </Link>
           
           <nav className="hidden lg:flex items-center gap-6">
-            <Link to="/" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">HOME</Link>
+            <Link to="/" className="text-white hover:text-gray-300 transition-colors">HOME</Link>
             
             <NavigationMenu>
               <NavigationMenuList>
@@ -31,9 +31,9 @@ const Header = () => {
                   <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">ABOUT US</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
-                      <Link to="#vision" className="text-sm font-medium text-gray-700 hover:text-primary">Vision & Mission</Link>
-                      <Link to="#team" className="text-sm font-medium text-gray-700 hover:text-primary">Our Team</Link>
-                      <Link to="#history" className="text-sm font-medium text-gray-700 hover:text-primary">History</Link>
+                      <Link to="#vision" className="text-gray-700 hover:text-primary">Vision & Mission</Link>
+                      <Link to="#team" className="text-gray-700 hover:text-primary">Our Team</Link>
+                      <Link to="#history" className="text-gray-700 hover:text-primary">History</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
