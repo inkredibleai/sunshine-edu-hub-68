@@ -1,74 +1,165 @@
-import { ArrowLeft } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useNavigate } from "react-router-dom";
+import BranchLayout from "@/components/BranchLayout";
+import { Card, CardContent } from "@/components/ui/card";
+import { Book, GraduationCap, Users, Trophy, ChartLine, Microscope, Atom, Award } from "lucide-react";
 
 const Coaching = () => {
-  const navigate = useNavigate();
-
   return (
-    <div className="min-h-screen bg-background">
-      <div className="container mx-auto px-4 py-8">
-        <Button
-          variant="ghost"
-          className="mb-6 group"
-          onClick={() => navigate(-1)}
-        >
-          <ArrowLeft className="mr-2 h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-          Back
-        </Button>
+    <BranchLayout
+      title="IIT/JEE/NEET Foundation"
+      heroImage="photo-1513258496099-48168024aec0"
+      heroTitle="Sunrise Foundation Classes"
+      heroDescription="Empowering students to achieve their dreams through quality education and guidance"
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Programs Section */}
+        <div className="lg:col-span-2 space-y-8">
+          <section>
+            <h2 className="font-heading text-2xl font-bold mb-4">Our Programs</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Atom className="w-8 h-8 text-primary" />
+                    <div>
+                      <h3 className="font-semibold mb-2">IIT-JEE (Main & Advanced)</h3>
+                      <p className="text-gray-600">Comprehensive preparation for engineering entrance exams</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Microscope className="w-8 h-8 text-primary" />
+                    <div>
+                      <h3 className="font-semibold mb-2">NEET-UG</h3>
+                      <p className="text-gray-600">Expert guidance for medical entrance preparation</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <Book className="w-8 h-8 text-primary" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Foundation Courses</h3>
+                      <p className="text-gray-600">For Class 9th & 10th students</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-4">
+                    <ChartLine className="w-8 h-8 text-primary" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Crash Courses</h3>
+                      <p className="text-gray-600">Intensive preparation programs</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
 
-        <div className="max-w-4xl mx-auto">
-          <h1 className="font-heading text-4xl font-bold text-primary mb-6">
-            IIT/JEE/NEET Foundation
-          </h1>
+          <section>
+            <h2 className="font-heading text-2xl font-bold mb-4">Our Approach</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <Card>
+                <CardContent className="p-6">
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Concept-based learning methodology</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Regular mock tests and assessments</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Personalized attention</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <ul className="space-y-2">
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Study material by experts</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Performance tracking</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary" />
+                      <span>Parent-teacher meetings</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </div>
 
-          <div className="prose prose-lg max-w-none">
-            <p>
-              Our specialized coaching division provides comprehensive preparation for
-              engineering and medical entrance examinations. With experienced faculty
-              and proven teaching methodologies, we help students achieve their dreams
-              of joining premier institutions.
-            </p>
-
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Programs</h2>
-            <ul>
-              <li>IIT-JEE Main & Advanced Preparation</li>
-              <li>NEET-UG Preparation</li>
-              <li>Foundation Courses (Class 9th & 10th)</li>
-              <li>Crash Courses</li>
-              <li>Distance Learning Programs</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Our Approach</h2>
-            <ul>
-              <li>Concept-based learning methodology</li>
-              <li>Regular mock tests and assessments</li>
-              <li>Personalized attention and doubt clearing sessions</li>
-              <li>Study material designed by experts</li>
-              <li>Performance tracking and analysis</li>
-              <li>Parent-teacher meetings</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Features</h2>
-            <ul>
-              <li>Experienced faculty from IITs and medical colleges</li>
-              <li>Small batch sizes for better interaction</li>
-              <li>Regular workshops and seminars</li>
-              <li>Online test series</li>
-              <li>Previous year paper discussion</li>
-              <li>Stress management sessions</li>
-            </ul>
-
-            <h2 className="text-2xl font-semibold mt-8 mb-4">Success Stories</h2>
-            <p>
-              Our institute has consistently produced top rankers in various competitive
-              examinations. Our students have secured admissions in prestigious
-              institutions like IITs, NITs, and top medical colleges across India.
-            </p>
-          </div>
+        {/* Statistics Section */}
+        <div className="space-y-8">
+          <section>
+            <h2 className="font-heading text-2xl font-bold mb-4">Our Numbers</h2>
+            <div className="space-y-4">
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4">
+                    <Users className="w-8 h-8 text-primary" />
+                    <div>
+                      <p className="text-2xl font-bold">10,000+</p>
+                      <p className="text-gray-600">Students Enrolled</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4">
+                    <GraduationCap className="w-8 h-8 text-primary" />
+                    <div>
+                      <p className="text-2xl font-bold">95%</p>
+                      <p className="text-gray-600">Success Rate</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4">
+                    <Trophy className="w-8 h-8 text-primary" />
+                    <div>
+                      <p className="text-2xl font-bold">500+</p>
+                      <p className="text-gray-600">Top Rankers</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardContent className="p-6">
+                  <div className="flex items-center gap-4">
+                    <Award className="w-8 h-8 text-primary" />
+                    <div>
+                      <p className="text-2xl font-bold">15+</p>
+                      <p className="text-gray-600">Years Experience</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
         </div>
       </div>
-    </div>
+    </BranchLayout>
   );
 };
 
