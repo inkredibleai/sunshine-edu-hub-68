@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 bg-[#1e2a4a] text-white backdrop-blur-sm z-50 border-b border-gray-700">
+    <header className="fixed top-0 left-0 right-0 bg-[#1e2a4a] text-white z-50 border-b border-gray-700">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2">
@@ -28,7 +28,7 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-white bg-transparent hover:bg-white/10">ABOUT US</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">ABOUT US</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
                       <Link to="#vision" className="text-sm font-medium text-gray-700 hover:text-primary">Vision & Mission</Link>
@@ -43,24 +43,41 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-white bg-transparent hover:bg-white/10">INSTITUTIONS</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">INSTITUTIONS</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
                       <Link to="/school" className="text-sm font-medium text-gray-700 hover:text-primary">Schools</Link>
                       <Link to="/college" className="text-sm font-medium text-gray-700 hover:text-primary">Colleges</Link>
                       <Link to="/coaching" className="text-sm font-medium text-gray-700 hover:text-primary">Coaching Centers</Link>
+                      <Link to="/pharmacy" className="text-sm font-medium text-gray-700 hover:text-primary">Pharmacy</Link>
+                      <Link to="/military" className="text-sm font-medium text-gray-700 hover:text-primary">Military Training</Link>
+                      <Link to="/kidscare" className="text-sm font-medium text-gray-700 hover:text-primary">Kids Care</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Link to="/courses" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">COURSES</Link>
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">COURSES</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-3 p-4 w-[200px] bg-white">
+                      <Link to="#engineering" className="text-sm font-medium text-gray-700 hover:text-primary">Engineering</Link>
+                      <Link to="#medical" className="text-sm font-medium text-gray-700 hover:text-primary">Medical</Link>
+                      <Link to="#commerce" className="text-sm font-medium text-gray-700 hover:text-primary">Commerce</Link>
+                      <Link to="#arts" className="text-sm font-medium text-gray-700 hover:text-primary">Arts</Link>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
             
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-white bg-transparent hover:bg-white/10">ADMISSIONS</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">ADMISSIONS</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
                       <Link to="#process" className="text-sm font-medium text-gray-700 hover:text-primary">Admission Process</Link>
@@ -75,7 +92,7 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-white bg-transparent hover:bg-white/10">RESULTS</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">RESULTS</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
                       <Link to="#academic" className="text-sm font-medium text-gray-700 hover:text-primary">Academic Results</Link>
@@ -90,25 +107,27 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-white bg-transparent hover:bg-white/10">FACILITIES</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">FACILITIES</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
                       <Link to="#infrastructure" className="text-sm font-medium text-gray-700 hover:text-primary">Infrastructure</Link>
                       <Link to="#library" className="text-sm font-medium text-gray-700 hover:text-primary">Library</Link>
                       <Link to="#labs" className="text-sm font-medium text-gray-700 hover:text-primary">Labs</Link>
+                      <Link to="#hostel" className="text-sm font-medium text-gray-700 hover:text-primary">Hostel</Link>
+                      <Link to="#transport" className="text-sm font-medium text-gray-700 hover:text-primary">Transport</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
-            <Link to="/alumni" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">ALUMNI NETWORK</Link>
+            <Link to="/alumni" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">ALUMNI</Link>
             <Link to="/jobs" className="text-sm font-medium text-white hover:text-gray-300 transition-colors">JOBS</Link>
             
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-sm font-medium text-white bg-transparent hover:bg-white/10">HELP DESK</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-white bg-transparent hover:bg-white/10">HELP DESK</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px] bg-white">
                       <Link to="#contact" className="text-sm font-medium text-gray-700 hover:text-primary">Contact Us</Link>
