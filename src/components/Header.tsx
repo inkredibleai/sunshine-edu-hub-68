@@ -8,32 +8,33 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-sm z-50 border-b">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
+          <Link to="/" className="flex items-center gap-2">
             <img src="/placeholder.svg" alt="Sunrise Edu Group Logo" className="h-12 w-auto" />
             <div className="flex flex-col">
               <span className="font-heading font-semibold text-xl text-primary hidden sm:inline">Sunrise Edu Group</span>
               <span className="text-sm text-gray-600 hidden sm:inline">Schools | Coachings | Colleges</span>
             </div>
-          </div>
+          </Link>
           
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="#home" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">HOME</a>
+            <Link to="/" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">HOME</Link>
             
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="text-gray-700">ABOUT US</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-sm font-medium text-gray-700">ABOUT US</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px]">
-                      <NavigationMenuLink href="#vision" className="text-gray-700 hover:text-primary">Vision & Mission</NavigationMenuLink>
-                      <NavigationMenuLink href="#team" className="text-gray-700 hover:text-primary">Our Team</NavigationMenuLink>
-                      <NavigationMenuLink href="#history" className="text-gray-700 hover:text-primary">History</NavigationMenuLink>
+                      <Link to="#vision" className="text-sm font-medium text-gray-700 hover:text-primary">Vision & Mission</Link>
+                      <Link to="#team" className="text-sm font-medium text-gray-700 hover:text-primary">Our Team</Link>
+                      <Link to="#history" className="text-sm font-medium text-gray-700 hover:text-primary">History</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -43,29 +44,29 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>INSTITUTIONS</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-sm font-medium text-gray-700">INSTITUTIONS</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px]">
-                      <NavigationMenuLink href="/school">Schools</NavigationMenuLink>
-                      <NavigationMenuLink href="/college">Colleges</NavigationMenuLink>
-                      <NavigationMenuLink href="/coaching">Coaching Centers</NavigationMenuLink>
+                      <Link to="/school" className="text-sm font-medium text-gray-700 hover:text-primary">Schools</Link>
+                      <Link to="/college" className="text-sm font-medium text-gray-700 hover:text-primary">Colleges</Link>
+                      <Link to="/coaching" className="text-sm font-medium text-gray-700 hover:text-primary">Coaching Centers</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
-            <a href="#courses" className="text-sm font-medium hover:text-primary transition-colors">COURSES</a>
+            <Link to="#courses" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">COURSES</Link>
             
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>ADMISSIONS</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-sm font-medium text-gray-700">ADMISSIONS</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px]">
-                      <NavigationMenuLink href="#process">Admission Process</NavigationMenuLink>
-                      <NavigationMenuLink href="#fees">Fee Structure</NavigationMenuLink>
-                      <NavigationMenuLink href="#scholarships">Scholarships</NavigationMenuLink>
+                      <Link to="#process" className="text-sm font-medium text-gray-700 hover:text-primary">Admission Process</Link>
+                      <Link to="#fees" className="text-sm font-medium text-gray-700 hover:text-primary">Fee Structure</Link>
+                      <Link to="#scholarships" className="text-sm font-medium text-gray-700 hover:text-primary">Scholarships</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -75,20 +76,20 @@ const Header = () => {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>RESULTS</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-sm font-medium text-gray-700">RESULTS</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px]">
-                      <NavigationMenuLink href="#academic">Academic Results</NavigationMenuLink>
-                      <NavigationMenuLink href="#competitive">Competitive Exams</NavigationMenuLink>
-                      <NavigationMenuLink href="#achievements">Achievements</NavigationMenuLink>
+                      <Link to="#academic" className="text-sm font-medium text-gray-700 hover:text-primary">Academic Results</Link>
+                      <Link to="#competitive" className="text-sm font-medium text-gray-700 hover:text-primary">Competitive Exams</Link>
+                      <Link to="#achievements" className="text-sm font-medium text-gray-700 hover:text-primary">Achievements</Link>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
 
-            <a href="#alumni" className="text-sm font-medium hover:text-primary transition-colors">ALUMNI</a>
-            <a href="#jobs" className="text-sm font-medium hover:text-primary transition-colors">JOBS</a>
+            <Link to="#alumni" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">ALUMNI</Link>
+            <Link to="#jobs" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">JOBS</Link>
             <Button variant="default" className="bg-primary hover:bg-primary/90">HELP DESK</Button>
           </nav>
           

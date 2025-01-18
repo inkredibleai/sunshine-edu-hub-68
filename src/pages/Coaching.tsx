@@ -1,164 +1,145 @@
 import BranchLayout from "@/components/BranchLayout";
 import { Card, CardContent } from "@/components/ui/card";
-import { Book, GraduationCap, Users, Trophy, ChartLine, Microscope, Atom, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { GraduationCap, Users, Trophy, Award, Star, BookOpen } from "lucide-react";
 
 const Coaching = () => {
+  const topRankers = [
+    { name: "Student Name 1", rank: "AIR 145", year: "2023" },
+    { name: "Student Name 2", rank: "AIR 234", year: "2023" },
+    { name: "Student Name 3", rank: "AIR 89", year: "2023" },
+  ];
+
+  const facilities = [
+    { icon: <BookOpen className="w-8 h-8" />, title: "Expert Faculty", description: "Experienced teachers dedicated to student success" },
+    { icon: <Users className="w-8 h-8" />, title: "Small Batch Size", description: "Personalized attention for better learning" },
+    { icon: <Star className="w-8 h-8" />, title: "Regular Tests", description: "Comprehensive assessment system" },
+  ];
+
+  const faqs = [
+    { question: "What are the admission criteria?", answer: "We have a merit-based admission process through entrance test and interview." },
+    { question: "What is the batch size?", answer: "We maintain small batch sizes of 30-35 students for personalized attention." },
+    { question: "Do you provide study material?", answer: "Yes, we provide comprehensive study material prepared by experts." },
+  ];
+
   return (
     <BranchLayout
-      title="IIT/JEE/NEET Foundation"
+      title="Sunrise Foundation Classes"
       heroImage="photo-1513258496099-48168024aec0"
-      heroTitle="Sunrise Foundation Classes"
-      heroDescription="Empowering students to achieve their dreams through quality education and guidance"
+      heroTitle="Welcome to Sunrise Foundation Classes"
+      heroDescription="Leading coaching institute for IIT-JEE and NEET preparation"
     >
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Programs Section */}
-        <div className="lg:col-span-2 space-y-8">
-          <section>
-            <h2 className="font-heading text-2xl font-bold mb-4">Our Programs</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Atom className="w-8 h-8 text-primary" />
-                    <div>
-                      <h3 className="font-semibold mb-2">IIT-JEE (Main & Advanced)</h3>
-                      <p className="text-gray-600">Comprehensive preparation for engineering entrance exams</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Microscope className="w-8 h-8 text-primary" />
-                    <div>
-                      <h3 className="font-semibold mb-2">NEET-UG</h3>
-                      <p className="text-gray-600">Expert guidance for medical entrance preparation</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <Book className="w-8 h-8 text-primary" />
-                    <div>
-                      <h3 className="font-semibold mb-2">Foundation Courses</h3>
-                      <p className="text-gray-600">For Class 9th & 10th students</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-start gap-4">
-                    <ChartLine className="w-8 h-8 text-primary" />
-                    <div>
-                      <h3 className="font-semibold mb-2">Crash Courses</h3>
-                      <p className="text-gray-600">Intensive preparation programs</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
-
-          <section>
-            <h2 className="font-heading text-2xl font-bold mb-4">Our Approach</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <Card>
-                <CardContent className="p-6">
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span>Concept-based learning methodology</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span>Regular mock tests and assessments</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span>Personalized attention</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <ul className="space-y-2">
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span>Study material by experts</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span>Performance tracking</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-primary" />
-                      <span>Parent-teacher meetings</span>
-                    </li>
-                  </ul>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
+      {/* Top Rankers Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-8 text-center">Our Top Achievers</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {topRankers.map((ranker, index) => (
+            <Card key={index}>
+              <CardContent className="p-6 text-center">
+                <img src="/placeholder.svg" alt={ranker.name} className="w-24 h-24 rounded-full mx-auto mb-4" />
+                <h3 className="font-semibold">{ranker.name}</h3>
+                <p className="text-primary">{ranker.rank}</p>
+                <p className="text-sm text-gray-600">{ranker.year}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
+      </section>
 
-        {/* Statistics Section */}
-        <div className="space-y-8">
-          <section>
-            <h2 className="font-heading text-2xl font-bold mb-4">Our Numbers</h2>
-            <div className="space-y-4">
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <Users className="w-8 h-8 text-primary" />
-                    <div>
-                      <p className="text-2xl font-bold">10,000+</p>
-                      <p className="text-gray-600">Students Enrolled</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <GraduationCap className="w-8 h-8 text-primary" />
-                    <div>
-                      <p className="text-2xl font-bold">95%</p>
-                      <p className="text-gray-600">Success Rate</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <Trophy className="w-8 h-8 text-primary" />
-                    <div>
-                      <p className="text-2xl font-bold">500+</p>
-                      <p className="text-gray-600">Top Rankers</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-4">
-                    <Award className="w-8 h-8 text-primary" />
-                    <div>
-                      <p className="text-2xl font-bold">15+</p>
-                      <p className="text-gray-600">Years Experience</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </section>
+      {/* Facilities Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-8 text-center">Our Facilities</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {facilities.map((facility, index) => (
+            <Card key={index}>
+              <CardContent className="p-6 text-center">
+                <div className="mb-4 flex justify-center text-primary">{facility.icon}</div>
+                <h3 className="font-semibold mb-2">{facility.title}</h3>
+                <p className="text-gray-600">{facility.description}</p>
+              </CardContent>
+            </Card>
+          ))}
         </div>
-      </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-8 text-center">Get in Touch</h2>
+        <Card className="max-w-2xl mx-auto">
+          <CardContent className="p-6">
+            <form className="space-y-4">
+              <div>
+                <Input placeholder="Your Name" />
+              </div>
+              <div>
+                <Input type="email" placeholder="Your Email" />
+              </div>
+              <div>
+                <Input placeholder="Phone Number" />
+              </div>
+              <div>
+                <Textarea placeholder="Your Message" />
+              </div>
+              <Button type="submit" className="w-full">Send Message</Button>
+            </form>
+          </CardContent>
+        </Card>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="mb-16">
+        <h2 className="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+        <Accordion type="single" collapsible className="max-w-2xl mx-auto">
+          {faqs.map((faq, index) => (
+            <AccordionItem key={index} value={`item-${index}`}>
+              <AccordionTrigger>{faq.question}</AccordionTrigger>
+              <AccordionContent>{faq.answer}</AccordionContent>
+            </AccordionItem>
+          ))}
+        </Accordion>
+      </section>
+
+      {/* Statistics Section */}
+      <section className="mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <Card>
+            <CardContent className="p-6 text-center">
+              <Users className="w-8 h-8 mx-auto mb-4 text-primary" />
+              <h3 className="text-2xl font-bold">10,000+</h3>
+              <p className="text-gray-600">Students</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 text-center">
+              <GraduationCap className="w-8 h-8 mx-auto mb-4 text-primary" />
+              <h3 className="text-2xl font-bold">95%</h3>
+              <p className="text-gray-600">Success Rate</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 text-center">
+              <Trophy className="w-8 h-8 mx-auto mb-4 text-primary" />
+              <h3 className="text-2xl font-bold">500+</h3>
+              <p className="text-gray-600">Top Rankers</p>
+            </CardContent>
+          </Card>
+          <Card>
+            <CardContent className="p-6 text-center">
+              <Award className="w-8 h-8 mx-auto mb-4 text-primary" />
+              <h3 className="text-2xl font-bold">15+</h3>
+              <p className="text-gray-600">Years Experience</p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
     </BranchLayout>
   );
 };
