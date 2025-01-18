@@ -30,10 +30,10 @@ const LatestNews = () => {
     if (!scrollElement) return;
 
     const scroll = () => {
-      if (scrollElement.scrollTop + scrollElement.clientHeight >= scrollElement.scrollHeight) {
-        scrollElement.scrollTop = 0;
+      if (scrollElement.scrollLeft + scrollElement.clientWidth >= scrollElement.scrollWidth) {
+        scrollElement.scrollLeft = 0;
       } else {
-        scrollElement.scrollTop += 1;
+        scrollElement.scrollLeft += 1;
       }
     };
 
@@ -48,15 +48,15 @@ const LatestNews = () => {
         <h2 className="font-heading text-3xl font-bold text-center mb-12">Latest News & Updates</h2>
         <div 
           ref={scrollRef} 
-          className="max-h-[400px] overflow-hidden"
+          className="overflow-hidden whitespace-nowrap"
         >
-          <div className="space-y-4">
+          <div className="inline-flex gap-4">
             {[...newsArticles, ...newsArticles].map((article, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
+              <Card key={index} className="hover:shadow-lg transition-shadow min-w-[400px]">
                 <CardContent className="p-6">
                   <div className="flex gap-4">
                     <img src={article.image} alt={article.title} className="w-24 h-24 object-cover rounded" />
-                    <div>
+                    <div className="whitespace-normal">
                       <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
                       <p className="text-sm text-gray-500 mb-2">{article.date}</p>
                       <p className="text-gray-600">{article.excerpt}</p>
