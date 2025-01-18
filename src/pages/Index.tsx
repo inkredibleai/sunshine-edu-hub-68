@@ -102,6 +102,37 @@ const Index = () => {
       <Hero />
       <Marquee />
       
+      {/* About and Latest Updates Section */}
+      <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* About Section */}
+            <div>
+              <h2 className="font-heading text-3xl font-bold text-primary mb-6">About Sunrise Edu Group</h2>
+              <div className="prose max-w-none">
+                <p className="text-gray-600 mb-4">
+                  Sunrise Edu Group is a leading educational institution committed to providing quality education across various levels. With a legacy of excellence spanning over decades, we have consistently delivered outstanding academic results and holistic development opportunities to our students.
+                </p>
+                <p className="text-gray-600 mb-4">
+                  Our comprehensive educational ecosystem includes schools, colleges, coaching centers, and specialized institutions, all working together to nurture talent and create future leaders.
+                </p>
+                <p className="text-gray-600">
+                  We believe in combining traditional values with modern teaching methodologies to provide an education that prepares students for global challenges while keeping them rooted in their culture.
+                </p>
+              </div>
+            </div>
+
+            {/* Latest Updates Section */}
+            <div className="h-full">
+              <h2 className="font-heading text-3xl font-bold text-primary mb-6">Latest Updates</h2>
+              <div className="bg-white rounded-lg shadow-lg p-6 h-[calc(100%-4rem)]">
+                <Notifications />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Statistics Section */}
       <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">

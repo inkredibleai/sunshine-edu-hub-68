@@ -15,25 +15,25 @@ const Header = () => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <img src="/placeholder.svg" alt="Prince Edu Hub Logo" className="h-12 w-auto" />
+            <img src="/placeholder.svg" alt="Sunrise Edu Group Logo" className="h-12 w-auto" />
             <div className="flex flex-col">
-              <span className="font-heading font-semibold text-xl text-primary hidden sm:inline">Prince Edu Hub</span>
+              <span className="font-heading font-semibold text-xl text-primary hidden sm:inline">Sunrise Edu Group</span>
               <span className="text-sm text-gray-600 hidden sm:inline">Schools | Coachings | Colleges</span>
             </div>
           </div>
           
           <nav className="hidden lg:flex items-center gap-6">
-            <a href="#home" className="text-sm font-medium hover:text-primary transition-colors">HOME</a>
+            <a href="#home" className="text-sm font-medium text-gray-700 hover:text-primary transition-colors">HOME</a>
             
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>ABOUT US</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className="text-gray-700">ABOUT US</NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid gap-3 p-4 w-[200px]">
-                      <NavigationMenuLink href="#vision">Vision & Mission</NavigationMenuLink>
-                      <NavigationMenuLink href="#team">Our Team</NavigationMenuLink>
-                      <NavigationMenuLink href="#history">History</NavigationMenuLink>
+                      <NavigationMenuLink href="#vision" className="text-gray-700 hover:text-primary">Vision & Mission</NavigationMenuLink>
+                      <NavigationMenuLink href="#team" className="text-gray-700 hover:text-primary">Our Team</NavigationMenuLink>
+                      <NavigationMenuLink href="#history" className="text-gray-700 hover:text-primary">History</NavigationMenuLink>
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
