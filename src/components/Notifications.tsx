@@ -40,19 +40,19 @@ const Notifications = () => {
   const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
 
   return (
-    <div className="bg-gradient-to-r from-blue-50 to-purple-50 py-6">
+    <div className="bg-gradient-to-r from-blue-50 to-purple-50 py-12">
       <div className="container mx-auto px-4">
-        <div className="flex items-center gap-2 mb-4">
+        <div className="flex items-center gap-2 mb-6">
           <Bell className="h-5 w-5 text-blue-600" />
           <h2 className="text-xl font-heading font-semibold">Latest Updates</h2>
         </div>
         
-        <div className="overflow-hidden h-20">
+        <div className="overflow-hidden h-32">
           <div className="animate-marquee">
             {notices.map((notice) => (
               <Card 
                 key={notice.id}
-                className="p-3 mb-2 cursor-pointer hover:bg-blue-50 transition-colors"
+                className="p-4 mb-3 cursor-pointer hover:bg-blue-50 transition-colors"
                 onClick={() => setSelectedNotice(notice)}
               >
                 <div className="flex items-center justify-between">
