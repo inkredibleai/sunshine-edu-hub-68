@@ -2,10 +2,13 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BranchCard from "@/components/BranchCard";
 import { Card, CardContent } from "@/components/ui/card";
-import { Star, Book, Users, Trophy, Building2, Laptop, GraduationCap, Award, Newspaper } from "lucide-react";
+import { Star, Book, Users, Trophy, Building2, Laptop, GraduationCap, Award } from "lucide-react";
 import Marquee from "@/components/Marquee";
 import Notifications from "@/components/Notifications";
 import Footer from "@/components/Footer";
+import CBSEResults from "@/components/CBSEResults";
+import WhyChooseSunrise from "@/components/WhyChooseSunrise";
+import BestSchoolingExperience from "@/components/BestSchoolingExperience";
 
 const Index = () => {
   const branches = [
@@ -157,30 +160,10 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Facilities Section */}
-      <section className="py-16 bg-gradient-to-b from-purple-50 to-white">
-        <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold text-center mb-4">Our Facilities</h2>
-          <p className="text-center text-gray-600 mb-8">
-            Experience state-of-the-art facilities designed to enhance your learning journey
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {facilities.map((facility, index) => (
-              <Card key={index} className={`${facility.color} border-none`}>
-                <CardContent className="p-6">
-                  <div className={`flex justify-center mb-4 ${facility.textColor}`}>
-                    {facility.icon}
-                  </div>
-                  <h3 className={`text-xl font-semibold text-center ${facility.textColor} mb-2`}>
-                    {facility.title}
-                  </h3>
-                  <p className="text-center text-gray-600">{facility.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* New Sections */}
+      <CBSEResults />
+      <WhyChooseSunrise />
+      <BestSchoolingExperience />
 
       {/* Statistics Section */}
       <section className="py-16 bg-gradient-to-b from-blue-50 to-white">
@@ -199,8 +182,6 @@ const Index = () => {
         </div>
       </section>
 
-      <Notifications />
-
       {/* Branches Section */}
       <section id="branches" className="py-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="container mx-auto px-4">
@@ -213,44 +194,6 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {branches.map((branch) => (
               <BranchCard key={branch.title} {...branch} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Top Selections Section */}
-      <section className="py-16 bg-gradient-to-b from-purple-50 to-white">
-        <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold text-center mb-12">Our Top Selections</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {topSelections.map((selection, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <img src={selection.image} alt={selection.title} className="w-24 h-24 mx-auto mb-4 rounded-full" />
-                  <h3 className="text-xl font-semibold text-center mb-2">{selection.title}</h3>
-                  <p className="text-center text-gray-600">{selection.student}</p>
-                  <p className="text-center text-primary font-semibold">{selection.rank}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* News & Updates Section */}
-      <section className="py-16 bg-gradient-to-b from-green-50 to-white">
-        <div className="container mx-auto px-4">
-          <h2 className="font-heading text-3xl font-bold text-center mb-12">Latest News & Updates</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {newsArticles.map((article, index) => (
-              <Card key={index} className="hover:shadow-lg transition-shadow">
-                <img src={article.image} alt={article.title} className="w-full h-48 object-cover" />
-                <CardContent className="p-6">
-                  <div className="text-sm text-gray-500 mb-2">{article.date}</div>
-                  <h3 className="text-xl font-semibold mb-2">{article.title}</h3>
-                  <p className="text-gray-600">{article.excerpt}</p>
-                </CardContent>
-              </Card>
             ))}
           </div>
         </div>
