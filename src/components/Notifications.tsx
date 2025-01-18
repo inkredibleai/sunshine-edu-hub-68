@@ -39,20 +39,35 @@ const Notifications = () => {
   const [selectedNotice, setSelectedNotice] = useState<Notice | null>(null);
 
   return (
-    <div className="h-full overflow-y-auto">
-      <div className="space-y-4">
-        {notices.map((notice) => (
-          <Card 
-            key={notice.id}
-            className="p-4 cursor-pointer hover:bg-blue-50 transition-colors"
-            onClick={() => setSelectedNotice(notice)}
-          >
-            <div className="flex items-center justify-between">
-              <span className="font-medium text-primary">{notice.title}</span>
-              <span className="text-sm text-gray-500">{notice.date}</span>
-            </div>
-          </Card>
-        ))}
+    <div className="h-[300px] overflow-hidden relative">
+      <div className="absolute inset-0">
+        <div className="animate-marquee space-y-4 transform translate-y-full">
+          {notices.map((notice) => (
+            <Card 
+              key={notice.id}
+              className="p-4 cursor-pointer hover:bg-blue-50 transition-colors mx-4"
+              onClick={() => setSelectedNotice(notice)}
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-primary">{notice.title}</span>
+                <span className="text-sm text-gray-500">{notice.date}</span>
+              </div>
+            </Card>
+          ))}
+          {/* Duplicate notices for seamless loop */}
+          {notices.map((notice) => (
+            <Card 
+              key={`duplicate-${notice.id}`}
+              className="p-4 cursor-pointer hover:bg-blue-50 transition-colors mx-4"
+              onClick={() => setSelectedNotice(notice)}
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-primary">{notice.title}</span>
+                <span className="text-sm text-gray-500">{notice.date}</span>
+              </div>
+            </Card>
+          ))}
+        </div>
       </div>
 
       <Dialog open={!!selectedNotice} onOpenChange={() => setSelectedNotice(null)}>
