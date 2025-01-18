@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import BranchCard from "@/components/BranchCard";
 import { Card, CardContent } from "@/components/ui/card";
-import { Users, GraduationCap, Trophy, Award } from "lucide-react";
+import { Users, GraduationCap, Trophy, Award, Book, Laptop } from "lucide-react";
 import Marquee from "@/components/Marquee";
 import Notifications from "@/components/Notifications";
 import Footer from "@/components/Footer";
